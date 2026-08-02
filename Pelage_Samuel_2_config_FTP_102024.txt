@@ -1,0 +1,53 @@
+listen=NO
+
+listen_ipv6=YES
+# Pas de connexion anonyme.
+anonymous_enable=NO
+# Autoriser les connexions des utilisateurs locaux.
+# Autoriser l'accès en écriture.
+local_enable=YES
+write_enable=YES
+local_umask=022
+
+dirmessage_enable=YES
+
+use_localtime=YES
+
+xferlog_enable=YES
+
+connect_from_port_20=YES
+
+chroot_local_user=NO
+
+secure_chroot_dir=/var/run/vsftpd/empty
+
+pam_service_name=vsftpd
+
+rsa_cert_file=/etc/ssl/certs/admin.rainbowbank.crt
+rsa_private_key_file=/etc/ssl/private/admin.rainbowbank.key
+# Activer SSL.
+ssl_enable=YES
+# Autoriser les utilisateurs anonymes d'utiliser des connexions SSL sécurisées.
+allow_anon_ssl=NO
+# Toutes les connexions non anonymes sont obligées d'utiliser une connexion SSL sécurisée
+# afin d'envoyer et de recevoir des données sur les connexions de données.
+force_local_data_ssl=YES
+# Toutes les connexions non anonymes sont obligées d'utiliser une connexion SSL sécurisée.
+force_local_logins_ssl=YES
+# Autoriser les connexions au protocole TLS v1.
+ssl_tlsv1=YES
+# Autoriser les connexions au protocole SSL v2.
+ssl_sslv2=NO
+# Autoriser les connexions au protocole SSL v3.
+ssl_sslv3=NO
+# Désactiver la réutilisation de la session SSL. (require by WinSCP)
+require_ssl_reuse=NO
+# Sélectionnez les chiffrements SSL que vsftpd autorisera pour les connexions SSL cryptées
+# (require by Filezilla)
+ssl_ciphers=HIGH
+# Forcer vsftp à démarrer en lecture
+allow_writeable_chroot=YES
+# Utilisateur enfermé dans un dossier déterminé
+local_root=/var/www
+# Activer le mode passif.
+pasv_enable=YES
