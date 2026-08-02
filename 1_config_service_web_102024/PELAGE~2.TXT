@@ -1,0 +1,26 @@
+<VirtualHost *:80>
+	ServerName extranet.rainbowbank.com
+	#ServerAlias extranet.rainbowbank.com
+	ServerAdmin admin@rainbowbank.com
+	
+	DocumentRoot /var/www/extranet.rainbowbank.com/
+	#ErrorLog ${APACHE_LOG_DIR}/extranet.rainbowbank.com-error.log
+	#CustomLog ${APACHE_LOG_DIR}/extranet.rainbowbank.com-access.log combined
+	
+	Redirect permanent / https://150.10.0.2:443
+	
+</VirtualHost>
+
+<VirtualHost *:443>
+	ServerName extranet.rainbowbank.com
+	ServerAdmin admin@rainbowbank.com
+	
+	DocumentRoot /var/www/extranet.rainbowbank.com/
+	ErrorLog ${APACHE_LOG_DIR}/extranet.rainbowbank.com-error.log
+	CustomLog ${APACHE_LOG_DIR}/extranet.rainbowbank.com-access.log combined
+	
+	SSLEngine on
+	SSLCertificateFile	/etc/ssl/certs/extranet.rainbowbank.crt
+	SSLCertificateKeyFile /etc/ssl/private/extranet.rainbowbank.key
+	
+</VirtualHost>

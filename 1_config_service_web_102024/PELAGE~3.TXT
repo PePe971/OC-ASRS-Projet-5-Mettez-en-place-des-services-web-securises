@@ -1,0 +1,15 @@
+<IfModule mod_evasive20.c>
+	#DOSHashTableSize	3097
+# Seuil pour le nombre de demandes pour la même page
+	DOSPageCount		5
+# Seuil pour le nombre total de requetes par le même client	
+	DOSSiteCount		50
+	DOSPageInterval	1
+	DOSSiteInterval	1
+# Période en seconde durant laquelle on bloque le client.	
+	DOSBlockingPeriod	300
+# Notifier l'alerte avec un mail.	
+	DOSEmailNotify		admin@rainbowbank.com
+	#DOSSystemCommand	"su - someuser -c '/sbin/... %s ...'"
+	#DOSLogDir			"/var/log/mod_evasive"
+</IfModule>
