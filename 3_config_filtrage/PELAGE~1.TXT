@@ -1,0 +1,10 @@
+#JAILS
+
+[vsftpd]
+enabled = true
+port = ftp,ftp-data,ftps,ftps-data
+filter = vsftpd
+logpath = /var/log/vsftpd.log
+findtime = 300
+bantime = 300
+maxretry = 3
